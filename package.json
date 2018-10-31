@@ -1,0 +1,28 @@
+{
+  "name": "boole",
+  "version": "1.0.0",
+  "description": "Adds various quality-of-life features and workflow improvements to the online George editor",
+  "author": [
+    "Shazz Amin <me@shazz.me>",
+    "Derek Yin <derek.yin@uwaterloo.ca>"
+  ],
+  "private": true,
+  "license": "MIT",
+  "homepage": "https://github.com/ShazzAmin/boole#readme",
+  "bugs": {
+    "url": "https://github.com/ShazzAmin/boole/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShazzAmin/boole.git"
+  },
+  "scripts": {
+    "build": "babel src -d build --copy-files"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0"
+  }
+}
