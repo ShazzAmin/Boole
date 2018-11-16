@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "boole",
   "short_name": "boole",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Adds various quality-of-life features and workflow improvements to the online George editor",
   "author": [
     "Shazz Amin <me@shazz.me>",
@@ -13,7 +13,7 @@
       "all_frames": true,
       "matches": ["*://www.student.cs.uwaterloo.ca/~se212/george/ask-george*"],
       "run_at": "document_start",
-      "js": ["boole.js"]
+      "js": ["index.js"]
     }
   ]
 }

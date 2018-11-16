@@ -1,6 +1,6 @@
 {
   "name": "boole",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Adds various quality-of-life features and workflow improvements to the online George editor",
   "author": [
     "Shazz Amin <me@shazz.me>",
@@ -17,12 +17,19 @@
     "url": "git+https://github.com/ShazzAmin/boole.git"
   },
   "scripts": {
-    "build": "babel src -d build --copy-files"
+    "dev": "rm -rf build && webpack --mode=development",
+    "build": "rm -rf build && webpack --mode=production"
   },
   "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.1.2",
     "@babel/core": "^7.1.2",
-    "@babel/preset-env": "^7.1.0"
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "copy-webpack-plugin": "^4.6.0",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2"
   }
 }

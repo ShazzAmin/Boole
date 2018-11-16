@@ -15,6 +15,12 @@ Browser extension adding various quality-of-life features and workflow improveme
 
 ### Build
 
+##### For development:
+
+`npm run dev`
+
+##### For production:
+
 `npm run build`
 
 
