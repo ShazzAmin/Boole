@@ -13,22 +13,23 @@ Browser extension adding various quality-of-life features and workflow improveme
 `npm install`
 
 
-### Build
+### Run (Web App)
 
-##### For development:
+`npm run start`
 
-`npm run dev`
 
-##### For production:
+### Build (Web App)
 
 `npm run build`
 
 
-### Run
+### Build & Run (Browser Extension)
 ##### Prerequisites:
 * A modern web browser
 
-1. Load the `build/` directory as an unpacked extension into the web browser.
+1. `npm run build-ext`
+
+1. Load the `build-ext/` directory as an unpacked extension into the web browser.
 
 2. Visit [Ask George](https://www.student.cs.uwaterloo.ca/~se212/george/ask-george/).
 
