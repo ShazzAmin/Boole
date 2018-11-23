@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import AceEditor from "react-ace";
 import "brace/theme/pastel_on_dark";
+import "brace/ext/searchbox";
 
 import "./ace-mode-george";
 
