@@ -12,6 +12,7 @@ export default class Editor extends Component {
         height="100%"
         mode="george"
         theme="pastel_on_dark"
+        value={"#u name\n#a 01\n\n#q 01\n\n#check PROP\n\na => b"}
         setOptions={{
           fontSize: 15,
           highlightActiveLine: false,
