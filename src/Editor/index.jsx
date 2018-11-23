@@ -5,6 +5,14 @@ import "brace/theme/pastel_on_dark";
 import "./ace-mode-george";
 
 export default class Editor extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      value: "#u name\n#a 01\n\n#q 01\n\n#check PROP\n\na => b"
+    };
+  }
+
   render() {
     return (
       <AceEditor
@@ -12,7 +20,8 @@ export default class Editor extends Component {
         height="100%"
         mode="george"
         theme="pastel_on_dark"
-        value={"#u name\n#a 01\n\n#q 01\n\n#check PROP\n\na => b"}
+        value={this.state.value}
+        onChange={(value) => this.setState({ value })}
         setOptions={{
           fontSize: 15,
           highlightActiveLine: false,

@@ -7,7 +7,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="full-page-container">
-        <Editor/>
+        <Editor />
       </div>
     );
   }
