@@ -21,6 +21,7 @@ export default class Editor extends Component {
           selectionStyle: "line",
           behavioursEnabled: true,
           showLineNumbers: true,
+          scrollPastEnd: true,
           displayIndentGuides: true
         }}
       />
