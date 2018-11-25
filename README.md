@@ -1,4 +1,4 @@
-boole
+Boole
 =====
 
 *by Shazz Amin, Derek Yin*
@@ -16,6 +16,8 @@ Browser extension adding various quality-of-life features and workflow improveme
 ### Run (Web App)
 
 `npm run start`
+
+\* For verification to work, the browser must have its security protections disabled (for Chrome, use the `--disable-web-security` launch option).
 
 
 ### Build (Web App)

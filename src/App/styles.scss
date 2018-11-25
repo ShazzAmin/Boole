@@ -1,8 +1,36 @@
-.full-page-container {
+@import "../variables";
+
+.app {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  display: grid;
+  grid-template-rows: 50px auto min-content;
+
+  &.app-expand-feedback {
+    grid-template-rows: 50px 60% min-content auto;
+  }
+
+  > * {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  > .app-feedback-collapse-control {
+    padding: 3px;
+    color: $secondary-color;
+    background-color: $accent-color;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    > .app-symbol {
+      margin-right: 5px;
+    }
+  }
 }
 
