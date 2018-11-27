@@ -26,6 +26,8 @@
 
     &:hover {
       cursor: pointer;
+      color: $accent-color;
+      background-color: $secondary-color;
     }
 
     > .app-symbol {
