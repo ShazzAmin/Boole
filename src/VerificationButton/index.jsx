@@ -40,8 +40,14 @@ export default class VerificationButton extends Component {
     )
     .then((response) => {
       const feedback = response.data;
-      const valid = feedback.indexOf("\n- Failed\n") === -1;
-      const magicUsed = feedback.indexOf("\n-- Warning: magic rule has been used.\n") !== -1;
+
+      const valid =
+        feedback.indexOf("\n- Failed\n") === -1
+        && feedback.indexOf("BAD STRUCTURE:") === -1;
+
+      const magicUsed =
+        feedback.indexOf("\n-- Warning: magic rule has been used.\n") !== -1
+        || feedback.indexOf("\n-- Warning: branch is open") !== -1;
 
       this.setState({ verifiedValue: valueToValidate, valid, magicUsed });
       this.props.onVerify(feedback);
