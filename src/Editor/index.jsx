@@ -35,6 +35,11 @@ export default class Editor extends Component {
           scrollPastEnd: true,
           displayIndentGuides: true
         }}
+        commands={[{   // commands is array of key bindings.
+          name: 'commandName', //name for the key binding.
+          bindKey: {win: 'Ctrl-/', mac: 'Command-/'}, //key combination used for the command.
+          exec: ''  //function to execute when keys are pressed.
+        }]}
       />
     );
   }
