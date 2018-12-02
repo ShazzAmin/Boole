@@ -17,7 +17,7 @@ Browser extension adding various quality-of-life features and workflow improveme
 
 `npm run start`
 
-\* For verification to work, the browser must have its security protections disabled (for Chrome, use the `--disable-web-security` launch option).
+\* For verification to work, the browser must have its security protections disabled (for Chrome, use the `--disable-web-security` launch option (this requires you to explicitly specify a profile with the `--user-data-dir` launch option)).
 
 
 ### Build (Web App)
