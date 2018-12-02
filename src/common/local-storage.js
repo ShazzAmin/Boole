@@ -1,19 +1,17 @@
 /* global chrome */
 
-const CHROME_EXT = false; // TODO: do this switch in .env
-
-let browser = window.localStorage;
+const CHROME_EXT = process.env.REACT_APP_CHROME_EXT === "true";
 
 export default class LocalStorage {
   static get = async (key) => {
     return new Promise((resolve, reject) => {
       if (CHROME_EXT) {
-        chrome.get(key, (result) => {
+        chrome.storage.sync.get(key, (result) => {
           if (key in result) resolve(result[key]);
           else reject();
         });
       } else {
-        const value = browser.getItem(key);
+        const value = window.localStorage.getItem(key);
         if (value !== null) resolve(value);
         else reject();
       }
@@ -22,9 +20,9 @@ export default class LocalStorage {
 
   static set = (key, value) => {
     if (CHROME_EXT) {
-      chrome.set({ [key]: value });
+      chrome.storage.sync.set({ [key]: value });
     } else {
-      browser.setItem(key, value);
+      window.localStorage.setItem(key, value);
     }
   };
 }
