@@ -2,15 +2,18 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 import "./styles.css";
+import { File } from "../common/files";
 
 export default class FileExplorer extends Component {
   static propTypes = {
     initialDirectories: PropTypes.array,
+    openFile: PropTypes.instanceOf(File),
     onFileOpen: PropTypes.func
   };
 
   static defaultProps = {
     initialDirectories: [],
+    openFile: null,
     onFileOpen: () => {}
   };
 
@@ -20,19 +23,6 @@ export default class FileExplorer extends Component {
     this.state = {
       directories: [...props.initialDirectories]
     };
-  }
-
-  componentDidMount() {
-    let fileIndex;
-    const directoryIndex = this.state.directories.findIndex((directory) => {
-      fileIndex = directory.files.findIndex((file) => {
-        return file.open;
-      });
-
-      return fileIndex !== -1;
-    });
-
-    this.props.onFileOpen(this.state.directories[directoryIndex].files[fileIndex].file);
   }
 
   toggleDirectoryExpanded = (directoryIndex) => {
@@ -47,27 +37,10 @@ export default class FileExplorer extends Component {
     });
   };
 
-  openFile = async (targetDirectoryIndex, targetFileIndex) => {
-    const targetFile = this.state.directories[targetDirectoryIndex].files[targetFileIndex];
-    if (targetFile.open) return;
+  openFile = (targetFile) => {
+    if (targetFile === this.props.openFile) return;
 
-    try {
-      await this.props.onFileOpen(targetFile.file)
-      const directories = [...this.state.directories].map((directory, directoryIndex) => {
-        return {
-          ...directory,
-          files: directory.files.map((file, fileIndex) => {
-            return {
-              ...file,
-              open: file.file === targetFile.file
-            };
-          })
-        };
-      });
-      this.setState({ directories });
-    } catch {
-      alert("Failed to open file!");
-    }
+    this.props.onFileOpen(targetFile);
   };
 
   render() {
@@ -87,12 +60,12 @@ export default class FileExplorer extends Component {
                   {
                     directory.files.map((file, fileIndex) => {
                       return (
-                        <li key={file.file.name}>
+                        <li key={file.name}>
                           <div
-                            className={"file-explorer-label" + (file.open ? " file-explorer-selected" : "")}
-                            onClick={() => this.openFile(directoryIndex, fileIndex)}
+                            className={"file-explorer-label" + (file === this.props.openFile ? " file-explorer-selected" : "")}
+                            onClick={() => this.openFile(file)}
                           >
-                            <span>{file.file.name}</span>
+                            <span>{file.name}</span>
                           </div>
                         </li>
                       );
