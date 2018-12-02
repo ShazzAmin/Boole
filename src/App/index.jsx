@@ -22,6 +22,10 @@ export default class App extends Component {
     };
   }
 
+  componentDidMount() {
+    this.onFileOpen(initialDirectories[0].files[0]);
+  }
+
   onFileOpen = async (file) => {
     try {
       this.setState({ value: await file.get(), openFile: file });
