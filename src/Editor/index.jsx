@@ -39,6 +39,9 @@ export default class Editor extends Component {
             scrollPastEnd: true,
             displayIndentGuides: true
           }}
+          editorProps={{
+            $blockScrolling: Infinity
+          }}
         />
       </div>
     );
