@@ -12,6 +12,8 @@ export default class App extends Component {
   constructor(props) {
     super(props);
 
+    this.editor = React.createRef();
+
     this.state = {
       value: "",
       feedback: "Click the \"Ask George\" button to get feedback.",
@@ -26,6 +28,8 @@ export default class App extends Component {
     } catch {
       alert("Failed to open file!");
     }
+
+    this.editor.current.clearHistory();
   };
 
   onValueChange = (value) => {
@@ -57,6 +61,7 @@ export default class App extends Component {
 
         <div className="app-editor">
           <Editor
+            ref={this.editor}
             value={this.state.value}
             onValueChange={this.onValueChange}
           />
