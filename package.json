@@ -1,7 +1,7 @@
 {
   "name": "Boole",
   "version": "0.1.0",
-  "description": "Adds various quality-of-life features and workflow improvements to the online George editor",
+  "description": "A full-featured front end for George with various qualify-of-life features and workflow improvements.",
   "author": [
     "Shazz Amin <me@shazz.me>",
     "Derek Yin <derek.yin@uwaterloo.ca>"

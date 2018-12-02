@@ -3,8 +3,7 @@ Boole
 
 *by Shazz Amin, Derek Yin*
 
-Browser extension adding various quality-of-life features and workflow improvements to the online George editor.
-
+A full-featured front end for George with various qualify-of-life features and workflow improvements.
 
 ### Set-up
 ##### Prerequisites:

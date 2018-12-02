@@ -1,0 +1,58 @@
+@import "../variables";
+
+.file-explorer {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  list-style-type: none;
+  color: $accent-color;
+  background-color: $secondary-color;
+
+  > li {
+    > .file-explorer-label {
+      padding-left: 5px;
+    }
+
+    > ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      display: none;
+
+      &.file-explorer-directory-expanded {
+        display: block;
+      }
+
+      > li {
+        > .file-explorer-label {
+          padding-left: 25px;
+        }
+      }
+    }
+  }
+
+  .file-explorer-label {
+    > span {
+      position: relative;
+      top: -0.125em;
+    }
+
+    &.file-explorer-selected {
+      font-style: italic;
+      color: $secondary-color;
+      background-color: $accent-color;
+    }
+
+    &:not(.file-explorer-selected) {
+      &:hover {
+        cursor: pointer;
+        color: $secondary-color;
+        background-color: $accent-color;
+      }
+    }
+  }
+}
+
