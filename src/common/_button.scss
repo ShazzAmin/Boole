@@ -1,0 +1,25 @@
+@import "./variables";
+
+@mixin button {
+  padding: 0;
+  padding-left: 7px;
+  padding-right: 7px;
+  outline: none;
+  border: 1px solid $accent-color;
+  color: $accent-color;
+  background-color: $secondary-color;
+  font-size: 16px;
+
+  &:hover {
+    cursor: pointer;
+    color: $secondary-color;
+    background-color: $accent-color;
+  }
+
+  &:disabled {
+    cursor: auto;
+    color: $secondary-color;
+    background-color: $accent-color;
+  }
+}
+
