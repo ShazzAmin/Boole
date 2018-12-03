@@ -24,8 +24,12 @@ export default class Editor extends Component {
     this.aceEditor = React.createRef();
   }
 
-  clearHistory = () => {
-    this.aceEditor.current.editor.getSession().setUndoManager(new UndoManager());
+  reset = () => {
+    const editor = this.aceEditor.current.editor;
+
+    editor.clearSelection();
+    editor.scrollToLine(0);
+    editor.getSession().setUndoManager(new UndoManager());
   };
 
   render() {

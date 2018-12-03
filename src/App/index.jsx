@@ -35,7 +35,7 @@ export default class App extends Component {
       alert("Failed to open file!");
     }
 
-    this.editor.current.clearHistory();
+    this.editor.current.reset();
   };
 
   onDownload = () => {
