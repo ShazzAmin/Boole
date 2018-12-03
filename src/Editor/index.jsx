@@ -7,6 +7,7 @@ import "brace/ext/searchbox";
 
 import "./styles.css";
 import "./ace-mode-george";
+import "./ace-auto-complete-george";
 
 export default class Editor extends Component {
   static propTypes = {
@@ -53,7 +54,9 @@ export default class Editor extends Component {
             behavioursEnabled: true,
             showLineNumbers: true,
             scrollPastEnd: true,
-            displayIndentGuides: true
+            displayIndentGuides: true,
+            enableBasicAutocompletion: true,
+            enableLiveAutocompletion: true
           }}
           editorProps={{
             $blockScrolling: Infinity
