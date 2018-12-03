@@ -1,13 +1,11 @@
 @import "../common/variables";
 
 .app {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
+  overflow: hidden;
   display: grid;
-  grid-template-columns: 140px auto;
+  grid-template-columns: 160px auto;
   grid-template-rows: 50px auto min-content 0;
   grid-template-areas:
     "title control-bar"
@@ -21,8 +19,6 @@
 
   > * {
     display: block;
-    width: 100%;
-    height: 100%;
 
     &.app-title {
       grid-area: title;
@@ -42,6 +38,7 @@
 
     &.app-file-explorer {
       grid-area: file-explorer;
+      overflow-y: auto;
     }
 
     &.app-editor {
