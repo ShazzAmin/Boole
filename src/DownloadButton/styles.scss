@@ -1,0 +1,6 @@
+@import "../common/button";
+
+.download-button {
+  @include button;
+}
+

@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 
 import "./styles.css";
+import { download } from "../common/download";
 import initialDirectories from "../common/directories";
 import ControlBar from "../ControlBar";
 import VerificationButton from "../VerificationButton";
+import DownloadButton from "../DownloadButton";
 import FileExplorer from "../FileExplorer";
 import Editor from "../Editor";
 import Output from "../Output";
@@ -36,6 +38,10 @@ export default class App extends Component {
     this.editor.current.clearHistory();
   };
 
+  onDownload = () => {
+    download(this.state.openFile.name, this.state.value);
+  };
+
   onValueChange = (value) => {
     this.setState({ value });
     this.state.openFile.set(value);
@@ -44,6 +50,10 @@ export default class App extends Component {
   render() {
     return (
       <div className={"app" + (this.state.feedbackExpanded ? " app-expand-feedback" : "")}>
+        <div className="app-title">
+          Boole
+        </div>
+
         <div className="app-control-bar">
           <ControlBar>
             <VerificationButton
@@ -52,6 +62,10 @@ export default class App extends Component {
             >
               Ask George
             </VerificationButton>
+
+            <DownloadButton
+              onDownload={this.onDownload}
+            />
           </ControlBar>
         </div>
 
