@@ -34,3 +34,8 @@ A full-featured front end for George with various qualify-of-life features and w
 
 2. Visit [Ask George](https://www.student.cs.uwaterloo.ca/~se212/george/ask-george/).
 
+
+### License
+[MIT](LICENSE)
+
+Copyright (c) 2018 Shazz Amin, Derek Yin 
