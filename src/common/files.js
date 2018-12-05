@@ -52,7 +52,7 @@ export class RemoteFile extends File {
     try {
       return await super.get();
     } catch {
-      return (await axios.get(`https://www.student.cs.uwaterloo.ca/~se212${this.path}`)).data;
+      return (await axios.get(`http://boole.shazz.me/files${this.path}`)).data;
     }
   }
   get = this.get.bind(this);
