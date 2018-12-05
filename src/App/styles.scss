@@ -29,7 +29,7 @@
       justify-content: center;
       font-weight: 600;
       font-size: 24px;
-      border-bottom: 0.5px solid $accent-color;
+      border-right: 1px solid $accent-color;
     }
 
     &.app-control-bar {
@@ -39,6 +39,7 @@
     &.app-file-explorer {
       grid-area: file-explorer;
       overflow-y: auto;
+      border-right: 1px solid $accent-color;
     }
 
     &.app-editor {

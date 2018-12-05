@@ -63,6 +63,7 @@ const words = [
   "for every",
   "for some",
   "exists_e",
+  "premise",
 
   // semantic tableaux
   "and_nb",
