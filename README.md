@@ -5,19 +5,23 @@ Boole
 
 A full-featured front end for George with various qualify-of-life features and workflow improvements.
 
-## Key Features
+![](/docs/screenshots/main.png)
 
-* Full file management system with auto assignment fetching/saving
 
-![](/docs/file_management.gif)
+### Features
 
-* Ask George verification with attention grabbing visual feedback
+* Auto-complete
 
-![](/docs/verification.gif)
+![](/docs/gifs/auto-complete.gif)
 
-* Auto completion of rules
+* File management for assignments and homeworks (auto-fetching, saving, downloading)
 
-![](/docs/auto_completion.gif)
+![](/docs/gifs/file-management.gif)
+
+* Verification by George (with distinct indicators for different types of feedback)
+
+![](/docs/gifs/verification.gif)
+
 
 ### Set-up
 ##### Prerequisites:
@@ -26,32 +30,20 @@ A full-featured front end for George with various qualify-of-life features and w
 `npm install`
 
 
-### Run (Web App)
+### Run
 
 `npm run start`
 
 \* For verification to work, the browser must have its security protections disabled (for Chrome, use the `--disable-web-security` launch option (this requires you to explicitly specify a profile with the `--user-data-dir` launch option)).
 
 
-### Build (Web App)
+### Build
 
 `npm run build`
-
-
-### Build & Run (Browser Extension)
-##### Prerequisites:
-* A modern web browser
-
-1. `npm run build-ext`
-
-1. Load the `build-ext/` directory as an unpacked extension into the web browser.
-
-2. Visit [Ask George](https://www.student.cs.uwaterloo.ca/~se212/george/ask-george/).
-
-
 
 
 ### License
 [MIT](LICENSE)
 
-Copyright (c) 2018 Shazz Amin, Derek Yin 
+Copyright (c) 2018 Shazz Amin, Derek Yin
+
