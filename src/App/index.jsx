@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 import "./styles.css";
 import { download } from "../common/download";
-import initialDirectories from "../common/directories";
 import ControlBar from "../ControlBar";
 import VerificationButton from "../VerificationButton";
 import DownloadButton from "../DownloadButton";
@@ -24,10 +23,6 @@ export default class App extends Component {
     };
   }
 
-  componentDidMount() {
-    this.onFileOpen(initialDirectories[0].files[0]);
-  }
-
   onFileOpen = async (file) => {
     try {
       this.setState({ value: await file.get(), openFile: file });
@@ -44,7 +39,7 @@ export default class App extends Component {
 
   onValueChange = (value) => {
     this.setState({ value });
-    this.state.openFile.set(value);
+    if (this.state.openFile !== null) this.state.openFile.set(value);
   };
 
   render() {
@@ -71,7 +66,6 @@ export default class App extends Component {
 
         <div className="app-file-explorer">
           <FileExplorer
-            initialDirectories={initialDirectories}
             openFile={this.state.openFile}
             onFileOpen={this.onFileOpen}
           />
