@@ -40,7 +40,7 @@ export default class FileExplorer extends Component {
         }
       })
     });
-  };
+};
 
   openFile = (targetFile) => {
     if (targetFile === this.props.openFile) return;
