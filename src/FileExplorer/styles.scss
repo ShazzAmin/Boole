@@ -52,15 +52,32 @@
   }
 
   .file-explorer-label {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 80% auto;
+
     > span {
       position: relative;
-      top: -0.125em;
+
+      &.file-explorer-name {
+        top: -0.125em;
+      }
+
+      &.file-explorer-reset-button {
+        top: -0.0625em;
+        text-align: right;
+      }
     }
 
     &.file-explorer-selected {
-      font-style: italic;
       color: $secondary-color;
       background-color: $accent-color;
+
+      > .file-explorer-name {
+        font-style: italic;
+      }
     }
 
     &:not(.file-explorer-selected) {

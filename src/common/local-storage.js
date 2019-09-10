@@ -10,5 +10,9 @@ export default class LocalStorage {
   static set = (key, value) => {
     window.localStorage.setItem(key, value);
   };
+
+  static reset = (key) => {
+    window.localStorage.removeItem(key);
+  };
 }
 

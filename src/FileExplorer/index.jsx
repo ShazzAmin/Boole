@@ -48,6 +48,13 @@ export default class FileExplorer extends Component {
     this.props.onFileOpen(targetFile);
   };
 
+  reset = async (targetFile) => {
+    if (!window.confirm("Are you sure you would like to reset this file?\nWARNING: You will lose all your changes for this file!")) return;
+
+    await targetFile.reset();
+    this.props.onFileOpen(targetFile);
+  };
+
   render() {
     return (
       <ul className="file-explorer">
@@ -66,7 +73,7 @@ export default class FileExplorer extends Component {
                   className="file-explorer-label"
                   onClick={() => this.toggleDirectoryExpanded(directoryIndex)}
                 >
-                  <span>{directory.expanded ? "▼" : "▶"} {directory.name}</span>
+                  <span className="file-explorer-name">{directory.expanded ? "▼" : "▶"} {directory.name}</span>
                 </div>
                 <ul className={directory.expanded ? "file-explorer-directory-expanded" : ""}>
                   {
@@ -77,7 +84,20 @@ export default class FileExplorer extends Component {
                             className={"file-explorer-label" + (file === this.props.openFile ? " file-explorer-selected" : "")}
                             onClick={() => this.openFile(file)}
                           >
-                            <span>{file.name}</span>
+                            <span className="file-explorer-name">{file.name}</span>
+                            {
+                              file === this.props.openFile
+                              ? <span
+                                  className="file-explorer-reset-button"
+                                  role="img"
+                                  title="Reset"
+                                  aria-label="Reset"
+                                  onClick={() => this.reset(file)}
+                                >
+                                  🔄
+                                </span>
+                              : null
+                            }
                           </div>
                         </li>
                       );
