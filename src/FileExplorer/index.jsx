@@ -2,17 +2,16 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 import "./styles.css";
+import Directories from "../common/directories";
 import { File } from "../common/files";
 
 export default class FileExplorer extends Component {
   static propTypes = {
-    initialDirectories: PropTypes.array,
     openFile: PropTypes.instanceOf(File),
     onFileOpen: PropTypes.func
   };
 
   static defaultProps = {
-    initialDirectories: [],
     openFile: null,
     onFileOpen: () => {}
   };
@@ -21,8 +20,14 @@ export default class FileExplorer extends Component {
     super(props);
 
     this.state = {
-      directories: [...props.initialDirectories]
+      directories: null
     };
+  }
+
+  async componentDidMount() {
+    let directories = await Directories.get();
+    this.props.onFileOpen(directories[0].files[0]);
+    this.setState({ directories });
   }
 
   toggleDirectoryExpanded = (directoryIndex) => {
@@ -47,7 +52,14 @@ export default class FileExplorer extends Component {
     return (
       <ul className="file-explorer">
         {
-          this.state.directories.map((directory, directoryIndex) => {
+          this.state.directories === null
+          ? <div
+              className="file-explorer-loading"
+              role="img"
+              title="Loading..."
+              aria-label="Loading..."
+            />
+          : this.state.directories.map((directory, directoryIndex) => {
             return (
               <li key={directory.name}>
                 <div
