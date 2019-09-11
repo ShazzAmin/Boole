@@ -10,6 +10,24 @@
   color: $accent-color;
   background-color: $secondary-color;
 
+  > .file-explorer-loading {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1.5px solid $accent-color;
+    border-color: $accent-color transparent $accent-color transparent;
+    animation: spin 1s linear infinite;
+    margin-top: 24px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @keyframes spin {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
   > li {
     > .file-explorer-label {
       padding-left: 5px;

@@ -1,3 +1,5 @@
+import axios from "axios";
+
 import { DefaultFile, RemoteFile } from "./files";
 
 const miscellaneousDirectory = {
@@ -8,41 +10,32 @@ const miscellaneousDirectory = {
   ]
 };
 
-const assignmentDirectories =
-  [6, 6, 4, 5, 4, 5, 1, 3].map((numQuestions, assignmentNumber) => {
-    assignmentNumber++;
+export default class Directories {
+  static get = () => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const directories = (await axios({
+          method: "get",
+          url: "http://boole.shazz.me/files/files.json",
+          responseType: "json"
+        })).data;
 
-    return {
-      name: `Assignment ${assignmentNumber}`,
-      expanded: false,
-      files: Array.from({ length: numQuestions }, (_, questionNumber) => {
-        questionNumber++;
+        const remoteDirectories = directories.map((directory) => {
+          return {
+            name: directory.name,
+            expanded: false,
+            files: directory.files.map((file) => new RemoteFile(file.name, file.path))
+          };
+        });
 
-        const paddedAssignmentNumber = assignmentNumber.toString().padStart(2, "0");
-        const paddedQuestionNumber = questionNumber.toString().padStart(2, "0");
-        const fileName = `a${paddedAssignmentNumber}q${paddedQuestionNumber}.grg`;
-        const filePath = `/asn/a${paddedAssignmentNumber}grg/${fileName}`;
-        return new RemoteFile(fileName, filePath);
-      })
-    };
-  });
-
-const homeworkDirectory = {
-  name: "Homeworks",
-  expanded: false,
-  files: Array.from({ length: 11 }, (_, homeworkNumber) => {
-    homeworkNumber++;
-
-    const paddedHomeworkNumber = homeworkNumber.toString().padStart(2, "0");
-    const fileName = `h${paddedHomeworkNumber}.grg`;
-    const filePath = `/hmwk/se212-h${paddedHomeworkNumber}-ques.grg`;
-    return new RemoteFile(fileName, filePath);
-  })
-};
-
-export default [
-  miscellaneousDirectory,
-  ...assignmentDirectories,
-  homeworkDirectory
-]
+        resolve([
+          miscellaneousDirectory,
+          ...remoteDirectories
+        ]);
+      } catch (err) {
+        alert("Failed to get list of files!");
+      }
+    });
+  };
+}
 
