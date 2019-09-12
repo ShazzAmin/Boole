@@ -32,7 +32,7 @@ export default class VerificationButton extends Component {
     const valueToValidate = this.props.value;
 
     axios.post(
-      "http://boole.shazz.me/verify",
+      "/verify",
       valueToValidate,
       {
         headers: { "Content-type": "text/plain" }
