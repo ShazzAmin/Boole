@@ -16,7 +16,7 @@ export default class Directories {
       try {
         const directories = (await axios({
           method: "get",
-          url: "http://boole.shazz.me/files/files.json",
+          url: "/files/files.json",
           responseType: "json"
         })).data;
 

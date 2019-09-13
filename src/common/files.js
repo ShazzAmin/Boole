@@ -69,7 +69,7 @@ export class RemoteFile extends File {
     try {
       return await super.get();
     } catch {
-      return (await axios.get(`http://boole.shazz.me/files${this.path}`)).data;
+      return (await axios.get(`/files${this.path}`)).data;
     }
   }
   get = this.get.bind(this);
