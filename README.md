@@ -34,8 +34,6 @@ A full-featured front end for George with various qualify-of-life features and w
 
 `npm run start`
 
-\* For verification to work, the browser must have its security protections disabled (for Chrome, use the `--disable-web-security` launch option (this requires you to explicitly specify a profile with the `--user-data-dir` launch option)).
-
 
 ### Build
 
