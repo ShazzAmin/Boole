@@ -1,13 +1,12 @@
 import axios from "axios";
 
 import { DefaultFile, RemoteFile } from "./files";
+import miscFiles from "./misc-files.js";
 
 const miscellaneousDirectory = {
   name: "Miscellaneous",
   expanded: true,
-  files: [
-    new DefaultFile("scratchpad.grg", "#u name\n#a 01\n\n#q 01\n\n#check PROP\n\na => b")
-  ]
+  files: miscFiles.map(({ name, contents }) => new DefaultFile(name, contents)),
 };
 
 export default class Directories {
@@ -33,7 +32,11 @@ export default class Directories {
           ...remoteDirectories
         ]);
       } catch (err) {
-        alert("Failed to get list of files!");
+        console.error("Failed to get list of remote files!");
+
+        resolve([
+          miscellaneousDirectory,
+        ]);
       }
     });
   };
