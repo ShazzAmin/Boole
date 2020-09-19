@@ -1,3 +1,5 @@
+/* global gtag */
+
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
@@ -45,11 +47,19 @@ export default class FileExplorer extends Component {
   openFile = (targetFile) => {
     if (targetFile === this.props.openFile) return;
 
+    gtag("event", "open", {
+      "event_label": targetFile.name,
+    });
+
     this.props.onFileOpen(targetFile);
   };
 
   reset = async (targetFile) => {
     if (!window.confirm("Are you sure you would like to reset this file?\nWARNING: You will lose all your changes for this file!")) return;
+
+    gtag("event", "reset", {
+      "event_label": targetFile.name,
+    });
 
     await targetFile.reset();
     this.props.onFileOpen(targetFile);

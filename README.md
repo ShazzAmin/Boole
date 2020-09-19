@@ -25,6 +25,7 @@ A full-featured front end for George with various qualify-of-life features and w
 
 ### Set-up
 ##### Prerequisites:
+* nodejs (^10.10.0)
 * npm (^6.4.1)
 
 `npm install`

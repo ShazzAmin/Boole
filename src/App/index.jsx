@@ -1,3 +1,5 @@
+/* global gtag */
+
 import React, { Component } from "react";
 
 import "./styles.css";
@@ -34,6 +36,10 @@ export default class App extends Component {
   };
 
   onDownload = () => {
+    gtag("event", "download", {
+      "event_label": this.state.openFile.name,
+    });
+
     download(this.state.openFile.name, this.state.value);
   };
 
