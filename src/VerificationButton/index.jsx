@@ -1,3 +1,5 @@
+/* global gtag */
+
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
@@ -30,6 +32,8 @@ export default class VerificationButton extends Component {
 
     this.setState({ verifying: true });
     const valueToValidate = this.props.value;
+
+    gtag("event", "verify");
 
     axios.post(
       "/verify",
