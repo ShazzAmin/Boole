@@ -16,8 +16,7 @@ const words = [
   "true",
 
   // transformational
-  "comm",	
-  "assoc",
+  "comm_assoc",	
   "contr",
   "lem",
   "impl",
