@@ -10,6 +10,7 @@ import DownloadButton from "../DownloadButton";
 import FileExplorer from "../FileExplorer";
 import Editor from "../Editor";
 import Output from "../Output";
+import KeyboardHandlerDropdown from "../KeyboardHandlerDropdown";
 
 export default class App extends Component {
   constructor(props) {
@@ -21,7 +22,8 @@ export default class App extends Component {
       value: "",
       feedback: "Click the \"Ask George\" button to get feedback.",
       feedbackExpanded: false,
-      openFile: null
+      openFile: null,
+      keyboardHandler: "windows",
     };
   }
 
@@ -48,6 +50,10 @@ export default class App extends Component {
     if (this.state.openFile !== null) this.state.openFile.set(value);
   };
 
+  onKeyboardHandlerChange = (keyboardHandler) => {
+    this.setState({ keyboardHandler });
+  }
+
   render() {
     return (
       <div className={"app" + (this.state.feedbackExpanded ? " app-expand-feedback" : "")}>
@@ -67,6 +73,10 @@ export default class App extends Component {
             <DownloadButton
               onDownload={this.onDownload}
             />
+
+            <KeyboardHandlerDropdown 
+              onKeyboardHandlerChange={this.onKeyboardHandlerChange}
+            />
           </ControlBar>
         </div>
 
@@ -82,6 +92,7 @@ export default class App extends Component {
             ref={this.editor}
             value={this.state.value}
             onValueChange={this.onValueChange}
+            keyboardHandler={this.state.keyboardHandler}
           />
         </div>
 

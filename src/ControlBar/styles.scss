@@ -9,10 +9,10 @@
   margin: 0;
   color: $accent-color;
   background-color: $secondary-color;
-  box-shadow: 0px 5px 0px 0px rgba(255,255,255,0.75);
+  box-shadow: 0px 5px 0px 0px rgba(255, 255, 255, 0.75);
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: min-content min-content auto;
+  grid-template-columns: min-content min-content auto max-content;
   grid-auto-flow: column;
 
   > * {
@@ -34,3 +34,6 @@
   }
 }
 
+.contribute-link {
+  justify-self: end;
+}
