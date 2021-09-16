@@ -5,10 +5,12 @@ import { UndoManager } from "brace";
 import "brace/theme/idle_fingers";
 import "brace/ext/searchbox";
 import "ace-builds/src-noconflict/keybinding-vim";
+import "ace-builds/src-noconflict/keybinding-emacs";
 
 import "./styles.css";
 import "./ace-mode-george";
 import "./ace-auto-complete-george";
+
 export default class Editor extends Component {
   static propTypes = {
     value: PropTypes.string.isRequired,

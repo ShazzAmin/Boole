@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import LocalStorage from "../common/local-storage";
 
-import "./styles.scss"
+import "./styles.scss";
 
 export default class KeyboardHandlerDropdown extends Component {
   static propTypes = {
@@ -37,19 +37,16 @@ export default class KeyboardHandlerDropdown extends Component {
 
   render() {
     return (
-      <div className="keyboard-handler-dropdown">
-        <label htmlFor="keyboard-handler">Key bindings:</label>
-        <select
-          name="keyboard-handler"
-          onChange={this.handleChange}
-          className="keyboard-handler-dropdown__select"
-          ref={this.dropdown}
-        >
-          <option value="windows">Default</option>
-          <option value="vim">Vim</option>
-          <option value="emacs">Emacs</option>
-        </select>
-      </div>
+      <select
+        name="keyboard-handler"
+        onChange={this.handleChange}
+        className="keyboard-handler-dropdown"
+        ref={this.dropdown}
+      >
+        <option value="windows">Default Keybindings</option>
+        <option value="vim">Vim Keybindings</option>
+        <option value="emacs">Emacs Keybindings</option>
+      </select>
     );
   }
 }

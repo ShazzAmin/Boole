@@ -1,12 +1,7 @@
 @import "../common/variables";
 
 .keyboard-handler-dropdown {
-  display: flex;
-  align-items: center;
   justify-self: end;
-}
-
-.keyboard-handler-dropdown__select {
   background-color: $secondary-color;
   color: $accent-color;
   border: 1px solid $accent-color;
