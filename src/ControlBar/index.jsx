@@ -7,9 +7,13 @@ export default class ControlBar extends Component {
     return (
       <div className="control-bar">
         {this.props.children}
-        <a href="https://github.com/ShazzAmin/Boole">Contribute on GitHub</a>
+        <a
+          href="https://github.com/ShazzAmin/Boole"
+          className="contribute-link"
+        >
+          Contribute on GitHub
+        </a>
       </div>
     );
   }
 }
-
