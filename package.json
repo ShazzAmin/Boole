@@ -37,7 +37,7 @@
   "devDependencies": {
     "@types/ace": "0.0.47",
     "ace-builds": "^1.4.12",
-    "axios": "^0.18.1",
+    "axios": "^0.21.2",
     "brace": "^0.11.1",
     "http-proxy-middleware": "^0.20.0",
     "node-sass-chokidar": "^1.4.0",
