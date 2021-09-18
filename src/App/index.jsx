@@ -10,7 +10,7 @@ import DownloadButton from "../DownloadButton";
 import FileExplorer from "../FileExplorer";
 import Editor from "../Editor";
 import Output from "../Output";
-import KeyboardHandlerDropdown from "../KeyboardHandlerDropdown";
+import KeyboardHandlerDropdown, { KEYBOARD_HANDLER_DEFAULT } from "../KeyboardHandlerDropdown";
 
 export default class App extends Component {
   constructor(props) {
@@ -23,7 +23,7 @@ export default class App extends Component {
       feedback: "Click the \"Ask George\" button to get feedback.",
       feedbackExpanded: false,
       openFile: null,
-      keyboardHandler: "windows",
+      keyboardHandler: KEYBOARD_HANDLER_DEFAULT,
     };
   }
 
