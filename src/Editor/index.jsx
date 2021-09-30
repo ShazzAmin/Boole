@@ -58,7 +58,8 @@ export default class Editor extends Component {
             scrollPastEnd: true,
             displayIndentGuides: true,
             enableBasicAutocompletion: true,
-            enableLiveAutocompletion: true
+            enableLiveAutocompletion: true,
+            wrapEnabled: true,
           }}
           editorProps={{
             $blockScrolling: Infinity
