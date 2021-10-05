@@ -9,6 +9,7 @@ import "ace-builds/webpack-resolver";
 import "./styles.css";
 import "./ace-mode-george";
 import "./ace-auto-complete-george";
+import "./ace-snippets-george";
 
 export default class Editor extends Component {
   static propTypes = {
@@ -58,7 +59,8 @@ export default class Editor extends Component {
             scrollPastEnd: true,
             displayIndentGuides: true,
             enableBasicAutocompletion: true,
-            enableLiveAutocompletion: true
+            enableLiveAutocompletion: true,
+            enableSnippets: true,
           }}
           editorProps={{
             $blockScrolling: Infinity
