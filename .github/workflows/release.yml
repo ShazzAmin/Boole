@@ -26,4 +26,5 @@ jobs:
         with:
           artifacts: "Boole.tar.gz"
           tag: ${{ env.GITHUB_SHA }}
+          commit: ${{ env.GITHUB_SHA }}
           token: ${{ secrets.GITHUB_TOKEN }}
