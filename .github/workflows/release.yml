@@ -22,9 +22,12 @@ jobs:
       - run: tar -czf ../Boole.tar.gz *
         working-directory: build/
 
+      - run: echo "::set-output name=datetime::$(date +'%Y-%m-%dT%H:%M:%S%z')"
+        id: datetime
+
       - uses: ncipollo/release-action@v1
         with:
           artifacts: "Boole.tar.gz"
-          tag: ${{ github.sha }}
+          tag: ${{ steps.datetime.outputs.datetime }}
           commit: "master"
           token: ${{ secrets.GITHUB_TOKEN }}
