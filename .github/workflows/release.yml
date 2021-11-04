@@ -25,6 +25,6 @@ jobs:
       - uses: ncipollo/release-action@v1
         with:
           artifacts: "Boole.tar.gz"
-          tag: ${{ GITHUB_SHA }}
-          commit: ${{ GITHUB_SHA }}
+          tag: "test"
+          commit: "master"
           token: ${{ secrets.GITHUB_TOKEN }}
