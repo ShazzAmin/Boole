@@ -29,5 +29,5 @@ jobs:
         with:
           artifacts: "Boole.tar.gz"
           tag: ${{ steps.datetime.outputs.datetime }}
-          commit: "master"
+          commit: "master-se212website"
           token: ${{ secrets.GITHUB_TOKEN }}
