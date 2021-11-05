@@ -36,7 +36,7 @@ export default class VerificationButton extends Component {
     gtag("event", "verify");
 
     axios.post(
-      "/verify",
+      "/~se212/george/ask-george/cgi-bin/george.cgi/check",
       valueToValidate,
       {
         headers: { "Content-type": "text/plain" }
