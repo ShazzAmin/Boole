@@ -2,7 +2,7 @@ name: Release
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master-se212website ]
   workflow_dispatch:
 
 jobs:
